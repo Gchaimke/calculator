@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 class InteractRunner {
     public static void main(String[] arg) throws UserException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int first, second;
+        double first, second;
         String exit = "no";
         Calculator calc = new Calculator();
         while (!exit.equals("e")) {

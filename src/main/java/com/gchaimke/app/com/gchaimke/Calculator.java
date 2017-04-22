@@ -4,33 +4,34 @@ package com.gchaimke;
  * calculator helper
  */
 class Calculator{
-	private int result=0;
+    private double result = 0;
 
-	/**
+    /**
 	 * action plus
 	 */
-    void add(int... params) {
+
+    void add(double... params) {
         this.result = params[0] + params[1];
     }
 
 	/**
 	 * action subtract
 	 */
-	 void sub(int ... params){
-			this.result = params[0] - params[1];
+    void sub(double... params) {
+        this.result = params[0] - params[1];
 	}
 
 	/**
 	 * action multiply
 	 */
-	void mult(int... params){
-		this.result = params[0] * params[1];
+    void mult(double... params) {
+        this.result = params[0] * params[1];
 	}
 
 	/**
 	 * action divide
 	 */
-    void div(int... params) throws UserException {
+    void div(double... params) throws UserException {
         if (params[0] != 0 && params[1] != 0) {
             this.result = params[0] / params[1];
         } else {
@@ -41,8 +42,8 @@ class Calculator{
 	/**
 	 * get result
 	 */
-	 int getResult(){
-		return this.result;
+    double getResult() {
+        return this.result;
 	}
 
 	/**
