@@ -1,3 +1,4 @@
-Calculator.class
-CalculatorTest.class
-InteractRunner.class
+com\gchaimke\Calculator.class
+com\gchaimke\CalculatorTest.class
+com\gchaimke\UserException.class
+com\gchaimke\InteractRunner.class
