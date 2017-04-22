@@ -9,9 +9,9 @@ class Calculator{
 	/**
 	 * action plus
 	 */
-	 void add(int ... params){
-			this.result = params[0] + params[1];
-	}
+    void add(int... params) {
+        this.result = params[0] + params[1];
+    }
 
 	/**
 	 * action subtract
@@ -30,9 +30,13 @@ class Calculator{
 	/**
 	 * action divide
 	 */
-	void div(int ... params){
-			this.result = params[0] / params[1];
-	}
+    void div(int... params) throws UserException {
+        if (params[0] != 0 && params[1] != 0) {
+            this.result = params[0] / params[1];
+        } else {
+            throw new UserException("Can't divide by zero");
+        }
+    }
 
 	/**
 	 * get result

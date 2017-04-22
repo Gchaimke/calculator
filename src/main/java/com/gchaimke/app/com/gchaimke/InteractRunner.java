@@ -1,26 +1,21 @@
 package com.gchaimke;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * App calculator viewer
  */
 class InteractRunner {
-    public static void main(String[] arg) {
+    public static void main(String[] arg) throws UserException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int first, second;
         String exit = "no";
-        /*
-		  try to take two numbers and do action with them
-		 */
-        try {
-            Calculator calc = new Calculator();
-			/*
-			  Start loop
-			 */
-            while (!exit.equals("e")) {
-				/*
-				  get first number
+        Calculator calc = new Calculator();
+        while (!exit.equals("e")) {
+            try {
+                /*
+                  get first number
 				 */
                 if (calc.getResult() == 0) {
                     System.out.print("Enter first number : ");
@@ -41,7 +36,7 @@ class InteractRunner {
                 System.out.print("Enter second number : ");
                 second = Integer.parseInt(reader.readLine());
 				/*
-				  calculate
+                  action calculate
 				 */
                 if (action.equals("+")) calc.add(first, second);
                 if (action.equals("-")) calc.sub(first, second);
@@ -50,13 +45,14 @@ class InteractRunner {
 				/*
 				  output
 				 */
-                System.out.println(first + action + second + "=" + calc.getResult());
-                System.out.print("Exit(e),Continue({Enter}),Clean(d) : ");
+                System.out.println("Result : " + calc.getResult());
+                System.out.print("Exit(e),Continue({Enter}),Clean result(d) : ");
                 exit = reader.readLine();
                 if (exit.equals("d")) calc.clearResult();
+
+            } catch (Exception UserException) {
+                System.out.println(UserException.getMessage());
             }
-        } catch (Exception e) {
-            System.out.println("Input error, please try one more time.");
         }
     }
 }
